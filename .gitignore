@@ -1,0 +1,22 @@
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+
+# Gerados por `just treinar` / `just promover` — cada máquina faz os seus.
+mlflow.db
+mlruns/
+mlartifacts/
+matriz.png
+.servidor.log
+
+# ---------------------------------------------------------------------------
+# Material do professor e saída de execução: existem nesta pasta, mas não
+# fazem parte da aula que o aluno clona.
+#
+#   RUNSHEET.md        roteiro minuto a minuto
+#   build_notebook.py  gerador do .ipynb (o notebook é o artefato)
+#   RESULTADOS.md      sai de `./demo.sh`, e é diferente em cada máquina
+# ---------------------------------------------------------------------------
+RUNSHEET.md
+build_notebook.py
+RESULTADOS.md

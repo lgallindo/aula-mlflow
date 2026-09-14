@@ -1,0 +1,10 @@
+[project]
+name = "aula-mlflow"
+version = "0.1.0"
+requires-python = ">=3.13"
+dependencies = [
+    "matplotlib>=3.11.2",
+    "mlflow>=3.16.0",
+    "pandas>=3.0.5",
+    "scikit-learn>=1.9.1",
+]
