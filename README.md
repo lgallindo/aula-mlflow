@@ -47,12 +47,13 @@ Uma linha, no começo de `treino.py`:
 mlflow.set_tracking_uri("sqlite:///mlflow.db")
 ```
 
-Um arquivo SQLite nesta pasta. Sem servidor, sem nuvem, sem conta.
+Isso cria um banco SQLite nesta pasta. Não é preciso subir servidor nem criar
+conta em lugar nenhum.
 
-> **Por que SQLite e não a pasta `./mlruns` padrão?** Porque o Model Registry —
-> as seções 7 e 8 desta aula — **não funciona** com o armazenamento em arquivos
-> soltos. Com um banco, funciona. É a diferença entre um comando e uma mensagem
-> de erro no meio da aula.
+> **Por que SQLite e não a pasta `./mlruns`, que é o padrão?** Porque o Model
+> Registry — o catálogo de versões e apelidos como `champion` — não funciona com
+> o armazenamento em arquivos soltos. Só funciona com um banco atrás. Quem pula
+> esta linha bate em um erro na hora de registrar o modelo.
 
 Quando o time cresce, o mesmo MLflow vira um servidor que todo mundo acessa —
 inclusive como contêiner (`ghcr.io/mlflow/mlflow`, porta 5000), com o script
@@ -160,8 +161,8 @@ requirements.txt
 
 Abra o `MLmodel` de uma das runs: além dos flavors, ele traz a **assinatura** —
 as 13 colunas com nome e tipo, e a saída como `int64`. Foi o `autolog()` que
-inferiu isso do `fit`, e é essa assinatura que a API da seção 9 usa para recusar
-uma entrada malformada.
+inferiu isso do `fit`. É essa assinatura que o `mlflow models serve` usa para
+recusar uma entrada malformada antes de o modelo ver o dado.
 
 O `MLmodel` declara os **flavors** — as maneiras de carregar aquele modelo.
 O `scikit-learn` gera dois: `sklearn` (o objeto original, com `.feature_importances_`
@@ -268,7 +269,8 @@ Sozinho ou em dupla, **sem copiar o `treino.py`**:
 Entregue o `mlflow.db` ou uma captura da tela de **Compare** com as suas runs.
 
 Quem terminar antes: troque a árvore por `RandomForestClassifier` e responda —
-**o que muda no código que carrega o modelo?** (Nada. Esse é o ponto do `pyfunc`.)
+**o que muda no código que carrega o modelo?** (Nada muda: o `pyfunc` carrega
+qualquer framework com a mesma chamada.)
 
 ## Os atalhos
 
