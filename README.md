@@ -312,3 +312,7 @@ a comparação com `search_runs`, que é a mesma consulta que a tela executa.
 - *MLflow Tracking Quickstart* — <https://mlflow.org/docs/latest/ml/tracking/quickstart/>
 - *MLflow Model Registry* — <https://mlflow.org/docs/latest/ml/model-registry/>
 - *MLflow Deployment* — <https://mlflow.org/docs/latest/ml/deployment/>
+
+## Licença
+
+GPL-3.0-or-later. Veja LICENSE.
